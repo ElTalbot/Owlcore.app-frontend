@@ -8,3 +8,7 @@
   min-height: 100vh;
   color: $text-primary;
 }
+
+.required {
+  color: $fail;
+}

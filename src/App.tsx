@@ -1,10 +1,14 @@
 import "./app.scss";
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LoginPage from "./pages/loginPage/loginPage";
+import React from "react";
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes></Routes>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+      </Routes>
     </BrowserRouter>
   );
 }
