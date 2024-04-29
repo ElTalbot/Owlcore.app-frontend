@@ -1,0 +1,10 @@
+@use "./styles/variables" as *;
+@use "./styles/mixins" as *;
+@use "./styles/resets" as *;
+
+#root {
+  @include flex(column, normal, normal);
+  background-color: $text-secondary;
+  min-height: 100vh;
+  color: $text-primary;
+}
