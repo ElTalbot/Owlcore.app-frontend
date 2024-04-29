@@ -31,3 +31,36 @@
     padding: 2rem;
   }
 }
+
+@mixin button-prime {
+  background-color: $accent-primary;
+  color: $text-secondary;
+  font-weight: 500;
+  height: 2rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: none;
+
+  @include tablet-and-desktop {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: fit-content;
+    min-width: 7rem;
+  }
+}
+
+@mixin form-field {
+  padding: 0.25rem 0.5rem;
+  border-radius: 2rem;
+  border: 2px solid $text-placeholder;
+  width: -webkit-fill-available;
+
+  &:active,
+  &:focus {
+    outline: 1px solid $accent-primary;
+  }
+
+  &::placeholder {
+    color: $text-placeholder;
+  }
+}
