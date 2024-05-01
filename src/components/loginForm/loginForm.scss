@@ -19,5 +19,6 @@
 
   &__btn {
     @include button-prime;
+    margin-top: 1rem;
   }
 }

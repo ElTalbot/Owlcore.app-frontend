@@ -1,0 +1,16 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.consent-form {
+  @include flex(column, start, start);
+  gap: 0.5rem;
+
+  &__wrapper-checkbox {
+    @include flex(row-reverse, start, start);
+  }
+
+  &__input-checkbox {
+    margin-top: 0.4rem;
+    margin-right: 0.5rem;
+  }
+}

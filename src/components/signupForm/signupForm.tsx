@@ -1,9 +1,8 @@
 import React, { SyntheticEvent, useState } from "react";
 import axios from "axios";
 import "./signupForm.scss";
-import { useNavigate } from "react-router-dom";
 
-export default function SignupForm() {
+export default function SignupForm({ toggleConsentModal }: any) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -13,23 +12,22 @@ export default function SignupForm() {
     confirmPassword: "",
   });
 
-  const nav = useNavigate();
+  const changeHandler = (event: any) => {
+    const { name, value } = event.target;
+    setFormData((prevformData) => ({ ...prevformData, [name]: value }));
+  };
 
   const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
 
     try {
       // const resp = await axios.post(URL GOES HERE);
-      nav("/");
+      toggleConsentModal();
     } catch (error) {
       console.log(error);
     }
   };
 
-  const changeHandler = (event: any) => {
-    const { name, value } = event.target;
-    setFormData((prevformData) => ({ ...prevformData, [name]: value }));
-  };
   return (
     <form className="signup-form" onSubmit={handleSubmit}>
       <div className="signup-form__container">
