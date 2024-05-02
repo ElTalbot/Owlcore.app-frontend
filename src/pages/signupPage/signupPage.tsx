@@ -4,6 +4,7 @@ import SignupForm from "../../components/signupForm/signupForm";
 import "./signupPage.scss";
 import React, { useState } from "react";
 import ConsentModal from "../../components/consentModal/consentModal";
+import ParqModal from "../../components/parqModal/parqModal";
 
 export default function SignupPage() {
   const [consentModal, setConsentModal] = useState(false);
@@ -32,6 +33,7 @@ export default function SignupPage() {
         </Link>
       </div>
       {consentModal && <ConsentModal toggleConsentModal={toggleConsentModal} />}
+      <ParqModal />
     </main>
   );
 }

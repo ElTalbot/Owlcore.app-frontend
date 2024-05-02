@@ -1,7 +1,8 @@
 import React, { SyntheticEvent, useState } from "react";
 import "./consentForm.scss";
+import Divider from "../divider/divider";
 
-export default function ConsentForm() {
+export default function ConsentForm({ toggleConsentModal }: any) {
   const [formData, setFormData] = useState({
     check1: false,
     check2: false,
@@ -11,6 +12,10 @@ export default function ConsentForm() {
     check6: false,
     check7: false,
     check8: false,
+    name: "",
+    email: "",
+    date: "",
+    signature: "",
   });
 
   const changeChecked = (event: any) => {
@@ -18,8 +23,14 @@ export default function ConsentForm() {
     setFormData((prevformData) => ({ ...prevformData, [name]: checked }));
   };
 
+  const changeHandler = (event: any) => {
+    const { name, value } = event.target;
+    setFormData((prevformData) => ({ ...prevformData, [name]: value }));
+  };
+
   const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
+    toggleConsentModal();
   };
   return (
     <form onSubmit={handleSubmit} className="consent-form">
@@ -137,6 +148,7 @@ export default function ConsentForm() {
           onChange={changeChecked}
         />
       </div>
+      <Divider />
       <p className="consent-form__text">
         I have read and understand the above agreement; I have been able to ask
         questions regarding any concerns I might have; I have had those
@@ -145,18 +157,61 @@ export default function ConsentForm() {
       </p>
       <div className="consent-form__grid">
         <div className="consent-form__wrapper">
-          <label htmlFor="" className="consent-form__label"></label>
-          <input type="text" className="consent-form__input" />
+          <label htmlFor="name" className="consent-form__label">
+            Participant name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={changeHandler}
+            className="consent-form__input"
+          />
         </div>
         <div className="consent-form__wrapper">
-          <label htmlFor="" className="consent-form__label"></label>
-          <input type="text" className="consent-form__input" />
+          <label htmlFor="date" className="consent-form__label">
+            Date
+          </label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            value={formData.date}
+            onChange={changeHandler}
+            className="consent-form__input"
+          />
         </div>
         <div className="consent-form__wrapper">
-          <label htmlFor="" className="consent-form__label"></label>
-          <input type="text" className="consent-form__input" />
+          <label htmlFor="signature" className="consent-form__label">
+            Signature
+          </label>
+          <input
+            type="text"
+            id="signature"
+            name="signature"
+            value={formData.signature}
+            onChange={changeHandler}
+            className="consent-form__input"
+          />
+        </div>
+        <div className="consent-form__wrapper">
+          <label htmlFor="email" className="consent-form__label">
+            Email address
+          </label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={changeHandler}
+            className="consent-form__input"
+          />
         </div>
       </div>
+      <button type="submit" className="consent-form__btn">
+        Save
+      </button>
     </form>
   );
 }

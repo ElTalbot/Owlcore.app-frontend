@@ -1,7 +1,7 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/variables" as *;
 
-.consent {
+.parq {
   @include container;
   @include flex;
   background-color: $bg-transparent;
@@ -35,10 +35,5 @@
 
   &__subtitle {
     margin-top: 1rem;
-  }
-
-  &__item {
-    list-style-position: outside;
-    margin-left: 2rem;
   }
 }

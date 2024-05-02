@@ -76,7 +76,7 @@ export default function ConsentModal({ toggleConsentModal }: any) {
             </li>
           </ol>
           <h3 className="consent__subtitle">Participant Understanding</h3>
-          <ConsentForm />
+          <ConsentForm toggleConsentModal={toggleConsentModal} />
         </section>
       </section>
     </div>
