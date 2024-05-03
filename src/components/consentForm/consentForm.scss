@@ -30,6 +30,7 @@
 
   &__input {
     width: 100%;
+    @include form-field;
   }
 
   &__btn {
