@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./mySessionsPage.scss";
+import "./sessionsPage.scss";
 import axios from "axios";
 import { ISession } from "../../interfaces/session";
 

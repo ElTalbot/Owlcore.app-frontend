@@ -1,0 +1,15 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.header {
+  &__container {
+    @include container;
+    @include flex(row);
+  }
+
+  &__wrapper {
+    &--nav {
+      margin-left: auto;
+    }
+  }
+}
