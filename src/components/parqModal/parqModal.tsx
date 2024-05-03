@@ -1,7 +1,8 @@
+import ParqForm from "../parqForm/parqForm";
 import "./parqModal.scss";
 import React, { useState } from "react";
 
-export default function ParqModal() {
+export default function ParqModal({ toggleParqModal }: any) {
   return (
     <div className="parq">
       <section className="parq__container">
@@ -18,6 +19,7 @@ export default function ParqModal() {
             seek further advice from your doctor or a qualified exercise
             professional before becoming more physically active.
           </p>
+          <ParqForm toggleParqModal={toggleParqModal} />
         </section>
       </section>
     </div>

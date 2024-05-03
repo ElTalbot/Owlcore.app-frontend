@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./consentModal.scss";
 import ConsentForm from "../consentForm/consentForm";
 
-export default function ConsentModal({ toggleConsentModal }: any) {
+export default function ConsentModal({
+  toggleConsentModal,
+  toggleParqModal,
+}: any) {
   return (
     <div className="consent">
       <section className="consent__container">
@@ -76,7 +79,10 @@ export default function ConsentModal({ toggleConsentModal }: any) {
             </li>
           </ol>
           <h3 className="consent__subtitle">Participant Understanding</h3>
-          <ConsentForm toggleConsentModal={toggleConsentModal} />
+          <ConsentForm
+            toggleConsentModal={toggleConsentModal}
+            toggleParqModal={toggleParqModal}
+          />
         </section>
       </section>
     </div>

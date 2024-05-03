@@ -2,7 +2,10 @@ import React, { SyntheticEvent, useState } from "react";
 import "./consentForm.scss";
 import Divider from "../divider/divider";
 
-export default function ConsentForm({ toggleConsentModal }: any) {
+export default function ConsentForm({
+  toggleConsentModal,
+  toggleParqModal,
+}: any) {
   const [formData, setFormData] = useState({
     check1: false,
     check2: false,
@@ -31,6 +34,7 @@ export default function ConsentForm({ toggleConsentModal }: any) {
   const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
     toggleConsentModal();
+    toggleParqModal();
   };
   return (
     <form onSubmit={handleSubmit} className="consent-form">

@@ -32,8 +32,13 @@ export default function SignupPage() {
           Already have an account? Log in
         </Link>
       </div>
-      {consentModal && <ConsentModal toggleConsentModal={toggleConsentModal} />}
-      <ParqModal />
+      {consentModal && (
+        <ConsentModal
+          toggleConsentModal={toggleConsentModal}
+          toggleParqModal={toggleParqModal}
+        />
+      )}
+      {parqModal && <ParqModal toggleParqModal={toggleParqModal} />}
     </main>
   );
 }
