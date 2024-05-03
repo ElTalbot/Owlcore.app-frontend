@@ -8,7 +8,6 @@ export default function LoginPage() {
   return (
     <main className="login">
       <div className="login__container">
-        <div className="login__logo">A Owl</div>
         <h2 className="login__title">Log In</h2>
         <LoginForm />
         <div className="login__wrapper">

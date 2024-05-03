@@ -1,5 +1,6 @@
 import React, { SyntheticEvent, useState } from "react";
 import "./parqForm.scss";
+import { useNavigate } from "react-router-dom";
 
 export default function ParqForm({ toggleParqModal }: any) {
   const [formData, setFormData] = useState({
@@ -35,9 +36,12 @@ export default function ParqForm({ toggleParqModal }: any) {
     setFormData((prevformData) => ({ ...prevformData, [name]: value }));
   };
 
+  const nav = useNavigate();
+
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
     toggleParqModal();
+    nav("/sessions");
   };
   return (
     <form className="parq-form" onSubmit={handleSubmit}>
